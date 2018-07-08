@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+        <h2>Product detail: {{ object.title }}</h2>
+        <b>${{ object.price }}</b>
+        <hr>
+        {{ object.description }}
+        <hr>
+        {% if object.product_image %}
+          <img src="{{ object.product_image.url }}" alt="" height="128px" width="128px">
+        {% endif %}
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock content %}

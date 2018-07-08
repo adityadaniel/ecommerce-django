@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <h1>Product listing</h1>
+        <hr>
+        <div class="container">
+          {% if request.GET.q %}
+          <div class="row">
+            <div class="col-12 mx-auto mb-4">
+              Results for: <b>{{ request.GET.q }}</b>
+            </div>
+          </div>
+          {% else %}
+          <div class="row">
+            <div class="col-12 col-md-6 py-4">
+              {% include "snippets/search_form.html" %}
+            </div>
+          </div>
+          {% endif %}
+          <div class="row">
+            {% for obj in object_list %}
+            <div class="col-md-4">
+              {% include 'products/snippets/card.html' with instance=obj %}
+            </div>
+              {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                </div><div class="row">
+              {% endif %}
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

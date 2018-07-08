@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+  
+  {% if instance.product_image %}
+    <img class="card-img-top" src="{{ instance.product_image.url }}" alt="{{ instance.title }}">
+  {% endif %}
+    <div class="card-body">
+      <h5 class="card-title">{{ instance.title }}</h5>
+      <p class="card-text">{{ instance.timestamp|timesince }} ago</p>
+      <p class="card-text">{{ instance.description }}</p>
+      <a href="{{ instance.slug }}" class="btn btn-primary">View</a>
+    </div>
+  </div>

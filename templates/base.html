@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% include 'partials/css.html' %}
+
+    <title>
+      {% block title %}
+      {% endblock title %}
+    </title>
+  </head>
+  <body>
+
+    {% include "partials/header.html" with brand_name='eCommerce' %}
+    
+    {% block content %}
+    {% endblock content %}
+
+    {% include "partials/js.html" %}
+  </body>
+</html>

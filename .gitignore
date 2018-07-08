@@ -1,0 +1,17 @@
+# Database
+*.db
+
+#django production
+static/
+media/
+
+# OS files
+.DS_Store
+
+# Django stuff:
+*.log
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
